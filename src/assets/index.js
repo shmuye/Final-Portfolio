@@ -1,0 +1,6 @@
+export { default as HeroImage } from './Hero.png'
+export { default as photo } from './photo.jpg'
+export { default as lms} from './lms.jpg'
+export { default as Research} from './Research.jpg'
+export { default as youtube} from './youtube.png'
+export { default as EHM } from './EHM.png'
