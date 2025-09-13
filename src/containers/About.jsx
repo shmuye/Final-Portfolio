@@ -1,17 +1,19 @@
 import React from 'react'
 import { FaGithub, FaFacebook, FaTwitter,  FaLinkedin } from 'react-icons/fa'
 import { photo } from '../assets/'
+import SectionHeading from "../components/SectionHeading.jsx";
+import Status from "../components/Status.jsx";
 const About = () => {
     return (
-        <section className="p-4 mx-auto" id="about">
-            <h2 className="text-center text-subheading mb-4"><span className="text-brand-dark font-bold">About</span> Me</h2>
-            <div className="flex flex-col md:flex-row  gap-4">
+        <section className="section" id="about">
+            <SectionHeading content="About Me" />
+            <div className="flex justify-center flex-col md:flex-row  gap-4">
                 <article
                     className="p-2 w-full md:w-1/2">
                     <div className="text-body text-center flex flex-col  gap-1">
                         <p className="text-left">
                            I’m Shmuye Ayalneh , a dedicated software engineering student
-                           and  and aspiring Full Stack developer.
+                           and  and aspiring Full Stack Developer.
                         </p>
                         <p className="text-left">
                             Over the past three years, I have been focusing on mastering
@@ -25,11 +27,13 @@ const About = () => {
                             Artificial intelligence, whereI can combine my development skills
                             with intelligent systems to create impactful solutions.
                         </p>
+                        <Status />
                         <div className="mt-4 flex justify-start items-center gap-4">
                             <a
-                                className="bg-brand-dark hover:bg-brand hover:cursor-pointer py-2 px-4 text-white">Resume</a>
+                                className="bg-brand-dark text-white hover:bg-brand hover:text-brand-dark hover:cursor-pointer py-2 px-4  rounded-sm">Resume</a>
                             <a
-                                className=" border border-brand-dark hover:bg-brand hover:cursor-pointer py-2 px-4 text-brand-dark">Get In Touch</a>
+                                href="#contact"
+                                className=" border border-brand-dark hover:bg-brand-dark hover:cursor-pointer py-2 px-4 text-brand-dark hover:text-white rounded-sm">Get In Touch</a>
                         </div>
 
                     </div>
@@ -40,10 +44,20 @@ const About = () => {
                         className="w-full md:w-[400px]"
                     />
                     <div className="flex justify-center items-center gap-4">
-                        <FaGithub className=" text-brand-dark hover:text-brand" size={24} />
-                        <FaTwitter className=" text-brand-dark hover:text-brand" size={24} />
-                        <FaLinkedin className=" text-brand-dark hover:text-brand" size={24} />
-                        <FaFacebook className=" text-brand-dark hover:text-brand" size={24} />
+                        <a href="https://github.com/shmuye">
+                            <FaGithub className=" text-brand-dark hover:text-brand" size={24} />
+                        </a>
+                        <a href="https://x.com/shmuye">
+                            <FaTwitter className=" text-brand-dark hover:text-brand" size={24} />
+                        </a>
+                       <a href="https://www.linkedin.com/in/shmuye-ayalneh-00707919a/">
+                           <FaLinkedin className=" text-brand-dark hover:text-brand" size={24} />
+                       </a>
+                        <a href="https://www.facebook.com/shmuye">
+                            <FaFacebook className=" text-brand-dark hover:text-brand" size={24} />
+                        </a>
+
+
                     </div>
                 </div>
 

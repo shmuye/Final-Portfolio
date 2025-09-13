@@ -1,37 +1,32 @@
-const NavLink = {
-    Home: {name: 'Home', url: '#home'},
-    About: {name: 'About', url: '#about'},
-    Skill: {name: 'Skills', url: '#skills'},
-    Services: {name: 'Services', url: '#services'},
-    Projects: {name: 'Projects', url: '#projects'},
-    Contact: {name: 'Contact', url: '#contact'},
-    Blog: {name: 'Blog', url: '#blog'}
+import React from "react";
+import { NavLinks } from "../constants/navLinks.js";
 
-}
-
-const Sidebar = ({setOpen}) => {
+const Sidebar = ({ setOpen, active }) => {
     return (
-        <section  className="bg-dark-gray md:hidden absolute right-0 top-16 w-full p-4 shadow-sm" id="sidebar">
-
+        <section
+            className="bg-dark-gray md:hidden absolute right-0 top-16 w-full p-4 shadow-sm"
+            id="sidebar">
             <nav>
                 <ul className="flex flex-col justify-start items-center">
-                    {
-                        Object.values(NavLink).map((link, ) => (
-                            <li className="my-2" key={link.name}>
-                                <a
-                                    onClick={() => setOpen(false)}
-                                    className="text-brand  hover:text-brand-dark text-body"
-                                    href={link.url}>
-                                    {link.name}
-                                </a>
-                            </li>
-                        ))
-
-                    }
+                    {Object.values(NavLinks).map((link) => (
+                        <li className="my-2" key={link.name}>
+                            <a
+                                onClick={() => setOpen(false)}
+                                className={`text-body ${
+                                    active === link.name
+                                        ? "text-brand underline decoration-brand-dark underline-offset-8"
+                                        : "text-brand hover:text-brand-dark"
+                                }`}
+                                href={link.url}
+                            >
+                                {link.name}
+                            </a>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </section>
+    );
+};
 
-    )
-}
-export default Sidebar
+export default Sidebar;

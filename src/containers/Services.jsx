@@ -1,23 +1,24 @@
 import React from 'react'
-import { FaCode, FaFigma, FaMobile } from "react-icons/fa";
+import {Code2, PhoneIcon,PencilRuler} from "lucide-react";
 import Service from '../components/Service'
+import SectionHeading from "../components/SectionHeading.jsx";
 
 const services = [
     {
         title: 'Full Stack Development',
         description: 'From pixel-perfect frontends to high-performance backends, I deliver the full package. ' +
             'I transform ideas into full-stack reality using the React and Node.js ecosystem',
-        icon: <FaCode />
+        icon: <Code2  color="#007079"/>
     },
     {
         title: 'UI/UX Design',
         description: 'I design intuitive, user-centric interfaces using figma ',
-        icon: <FaFigma />
+        icon: <PencilRuler color="#007079" />
     },
     {
         title: 'Mobile App Development',
         description: 'I Build beautiful, native-quality mobile apps for Android and iOS with Flutter & Jetpack Compose ',
-        icon: <FaMobile />
+        icon: <PhoneIcon color="#007079" />
     },
 ]
 
@@ -27,10 +28,11 @@ const Services = () => {
     return (
         <section
             id="services"
-            className=""
+            className="section"
+
         >
-            <h2 className="text-brand-dark text-subheading text-center">Services</h2>
-            <div className="w-full flex flex-col items-center justify-center md:flex-row min-h-screen gap-4 p-4">
+            <SectionHeading content="Services" />
+            <div className="w-full flex flex-col items-center justify-center md:flex-row min-h-[60vh] gap-4 p-4">
                 {
                     services.map((service, index) => (
                         <Service key={index} {...service} />

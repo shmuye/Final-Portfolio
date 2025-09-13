@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Geist:wght@100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
 html {
     scroll-behavior: smooth;
 }
@@ -14,9 +16,13 @@ html {
     --color-light-gray: #e9e9e9;
 
     --text-hero: 36px;
-    --text-heading: 24px;
+    --text-heading: 32px;
+    --text-sectionheading: 24px;
     --text-subheading: 20px;
-    --text-body: 16px;
+    --text-body: 14px;
+
+    --font-merriweather: 'Merriweather', serif;
+
 
     --spacing-1: 4px;
     --spacing-2: 8px;
@@ -27,17 +33,31 @@ html {
     --spacing-7: 48px;
     --spacing-8: 56px;
     --spacing-9: 64px;
-
 }
 
 
 @layer base {}
 @layer utilities{
     .section {
-        @apply bg-gray-500 w-[80%] h-screen text-center py-[20px] ;
+        @apply py-2 px-4 md:py-4 md:px-8  min-h-[60vh];
     }
-    .sectionHeading {
-        @apply font-bold text-[24px] mx-auto text-blue-800 leading-tight;
+    .section_heading {
+        @apply font-bold text-sectionheading text-center my-2 text-brand-dark;
+    }
+    .btn{
+        @apply px-4 py-2 bg-brand-dark hover:cursor-pointer text-white hover:bg-brand hover:text-brand-dark rounded-sm;
+    }
+    .input{
+        @apply p-2 border-2 w-[400px] border-light-gray rounded-sm text-body
+    }
+    .label{
+        @apply text-body font-semibold;
+    }
+    .pElement{
+        @apply text-body font-medium;
+    }
+    .title {
+        @apply text-subheading font-bold text-black;
     }
 
 }
