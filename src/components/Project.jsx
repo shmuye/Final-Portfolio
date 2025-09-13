@@ -14,7 +14,7 @@ const Project = ({siteUri, githubUri, imageUri, name, description }) => {
             <a href={githubUri} className="flex flex-col" target="_blank" rel="noreferrer">
                 <img src={imageUri} alt={name} className="w-full rounded-t-2xl h-[200px]" />
                 <h3 className="title p-2">{name}</h3>
-                <p className="pElement pt-2 pb-4 px-2">{description}</p>
+                <p className="pElement text-dark-gray pt-2 pb-4 px-2">{description}</p>
             </a>
             {hover && (
                 <div className="rounded-2xl absolute top-0 left-0 w-full h-full bg-brand-dark opacity-75 flex flex-col justify-center items-center gap-2">

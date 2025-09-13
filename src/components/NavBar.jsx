@@ -2,6 +2,7 @@ import { MenuIcon, X } from "lucide-react";
 import React, {useState, useEffect} from 'react'
 import Sidebar from "./Sidebar.jsx";
 import {NavLinks} from "../constants/navLinks.js";
+import { AnimatePresence } from "framer-motion";
 const NavBar = () => {
     const [open, setOpen] =useState(false);
     const [active, setActive] = useState("Home");
@@ -26,9 +27,9 @@ const NavBar = () => {
         return () => observer.disconnect();
     }, []);
     return (
-        <header className="fixed left-0 right-0 h-16 border-b border-brand-dark z-50 bg-light-gray">
+        <header className="fixed left-0 right-0 h-16  border-b border-brand-dark z-50 bg-dark-gray">
             <nav className="flex justify-between items-center h-full p-4">
-                <h1 className="font-bold text-black decoration-brand-dark underline underline-offset-8 decoration-2">
+                <h1 className="font-bold text-white decoration-brand-dark underline underline-offset-8 decoration-2">
                     <span className="text-brand-dark">S</span>hmuye.
                 </h1>
 
@@ -38,8 +39,8 @@ const NavBar = () => {
                         <li key={index}>
                             <a
                                 className={`text-body ${
-                                    active === link.name ? "text-brand underline decoration-brand-dark underline-offset-8" : "text-brand-dark hover:text-brand"
-                                }`}
+                                    active === link.name && "underline decoration-brand-dark underline-offset-8"
+                                } text-brand hover:text-brand-dark`}
                                 href={link.url}
                             >
                                 {link.name}
@@ -54,13 +55,15 @@ const NavBar = () => {
                     onClick={() => setOpen(!open)}
                 >
                     {open ? (
-                        <X color="#007079" size={24} />
+                        <X  className="cursor-pointer" color="#007079" size={24} />
                     ) : (
-                        <MenuIcon color="#007079" size={24} />
+                        <MenuIcon className="cursor-pointer" color="#007079" size={24} />
                     )}
                 </button>
 
-                {open && <Sidebar setOpen={setOpen} active={active} />}
+                <AnimatePresence>
+                    {open && <Sidebar setOpen={setOpen} active={active} />}
+                </AnimatePresence>
             </nav>
         </header>
     )

@@ -1,11 +1,17 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { NavLinks } from "../constants/navLinks.js";
 
 const Sidebar = ({ setOpen, active }) => {
     return (
-        <section
-            className="bg-dark-gray md:hidden absolute right-0 top-16 w-full p-4 shadow-sm"
-            id="sidebar">
+        <motion.section
+            className="bg-dark-gray md:hidden fixed right-0 top-16 w-full p-4 shadow-sm z-40"
+            id="sidebar"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.4 }}
+        >
             <nav>
                 <ul className="flex flex-col justify-start items-center">
                     {Object.values(NavLinks).map((link) => (
@@ -25,7 +31,7 @@ const Sidebar = ({ setOpen, active }) => {
                     ))}
                 </ul>
             </nav>
-        </section>
+        </motion.section>
     );
 };
 
