@@ -2,7 +2,7 @@ import { MenuIcon, X } from "lucide-react";
 import React, {useState, useEffect} from 'react'
 import Sidebar from "./Sidebar.jsx";
 import {NavLinks} from "../constants/navLinks.js";
-import { AnimatePresence } from "framer-motion";
+import {motion, AnimatePresence } from "framer-motion";
 const NavBar = () => {
     const [open, setOpen] =useState(false);
     const [active, setActive] = useState("Home");
@@ -33,7 +33,7 @@ const NavBar = () => {
                     <span className="text-brand-dark">S</span>hmuye.
                 </h1>
 
-                {/* Desktop links */}
+
                 <ul className="hidden md:flex gap-8 justify-end">
                     {Object.values(NavLinks).map((link, index) => (
                         <li key={index}>
@@ -49,15 +49,15 @@ const NavBar = () => {
                     ))}
                 </ul>
 
-                {/* Mobile button */}
+
                 <button
                     className="md:hidden z-50"
                     onClick={() => setOpen(!open)}
                 >
                     {open ? (
-                        <X  className="cursor-pointer" color="#007079" size={24} />
+                        <X  className="cursor-pointer font-bold" color="#007079" size={24} />
                     ) : (
-                        <MenuIcon className="cursor-pointer" color="#007079" size={24} />
+                        <MenuIcon className="cursor-pointer font-bold" color="#007079" size={24} />
                     )}
                 </button>
 

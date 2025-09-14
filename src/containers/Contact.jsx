@@ -1,9 +1,25 @@
-import React from 'react'
+import { useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import  Button  from '../components/Button.jsx'
 import SectionHeading from "../components/SectionHeading.jsx";
 import {PhoneCall, MailIcon, MapPin } from "lucide-react";
 
+
 const Contact = () => {
+    const form = useRef()
+
+    const sendEmail = (e) => {
+        e.preventDefault()
+        emailjs.sendForm('service_nahup8n', 'template_4tthyjs', form.current, {
+            PUBLIC_KEY: "yrMgxXbqVMZIgZrBm"
+        })
+            .then((result) => {
+                console.log(result.text)
+                console.log("message sent successfully")
+            }, (error) => {
+                console.log(error.text)
+            })
+    }
     return (
         <section
             id="contact"
@@ -12,7 +28,10 @@ const Contact = () => {
             <h2 className='text-subHeading text-dark-gray text-center'>Let's Solve Problems together</h2>
             <SectionHeading content="Get In touch" />
             <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                <form className="flex flex-col gap-4" action="https://formsubmit.co/<EMAIL>" method="POST">
+                <form
+                    ref={form}
+                    onSubmit={sendEmail}
+                    className="flex flex-col gap-4" action="https://formsubmit.co/<EMAIL>" method="POST">
                 <div className="flex flex-col items-start gap-2">
                     <label className="label">Your Name: </label>
                     <input
@@ -39,6 +58,7 @@ const Contact = () => {
                         Your Message:
                     </label>
                     <textarea
+                        name="message"
                         className="p-2 border-2 w-[400px] h-[200px] border-light-gray rounded-md text-body"
                         placeholder="Enter your Message"
                         required
