@@ -20,7 +20,7 @@ const projects = [
      name: 'Youtube Clone',
      description: "Youtube clone application using React and data from rapid api.",
      githubUri: "https://github.com/shmuye/youtube-clone",
-        siteUri: 'https://google.com/',
+        siteUri: 'https://utubelike.netlify.app/',
      imageUri: youtube,
     },
     {

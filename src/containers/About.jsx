@@ -32,10 +32,10 @@ const About = () => {
                             <a
                                 href="/Resume.pdf"
                                 download="Shmuye_Ayalneh_Resume.pdf"
-                                className="bg-brand-dark text-white hover:bg-brand hover:text-brand-dark hover:cursor-pointer py-2 px-4  rounded-sm">DownLoad Resume</a>
+                                className="bg-brand-dark text-white hover:bg-brand hover:text-brand-dark hover:cursor-pointer py-3 px-4  rounded-sm">DownLoad Resume</a>
                             <a
                                 href="#contact"
-                                className=" border border-brand-dark hover:bg-brand-dark hover:cursor-pointer py-2 px-4 text-brand-dark hover:text-white rounded-sm">Get In Touch</a>
+                                className=" border border-brand-dark hover:bg-brand-dark hover:cursor-pointer py-3 px-4 text-brand-dark hover:text-white rounded-sm">Get In Touch</a>
                         </div>
 
                     </div>

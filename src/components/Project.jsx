@@ -23,7 +23,9 @@ const Project = ({siteUri, githubUri, imageUri, name, description }) => {
                     </a>
                     {
                         siteUri &&
-                        <a  className="text-white font-bold" href={{siteUri}}>
+                        <a
+                            className="text-white font-bold"
+                            href={siteUri}>
                             View Site
                         </a>
                     }
