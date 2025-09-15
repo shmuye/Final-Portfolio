@@ -56,10 +56,18 @@ const Footer = () => {
             <div className="flex flex-col gap-4">
                 <h2 className="text-white text-subheading">Social</h2>
                 <div className="flex gap-4">
-                    <FaGithub className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                    <FaTwitter className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                    <FaLinkedin className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                    <FaFacebook className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
+                    <a href="https://github.com/shmuye">
+                        <FaGithub className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
+                    </a>
+                    <a href="https://X.com/shmuye">
+                        <FaTwitter className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/shmuye-ayalneh/">
+                        <FaLinkedin className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
+                    </a>
+                    <a href="https://www.facebook.com/share/16jQ8s0gyB/">
+                        <FaFacebook className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
+                    </a>
                 </div>
               </div>
             </div>

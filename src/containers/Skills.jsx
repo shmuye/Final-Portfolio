@@ -19,6 +19,7 @@ import {
 } from "../assets/index.js";
 import Skill from "../components/Skill.jsx";
 import SectionHeading from "../components/SectionHeading.jsx";
+import { motion } from "framer-motion";
 
 const skills = [
     {name: 'HTML', icon: html },
@@ -46,12 +47,22 @@ const Skills = () => {
             className="section bg-light-gray "
         >
             <SectionHeading content="Skills" />
-            <div className="grid grid-cols-3 md:grid-cols-4 justify-items-center ">
-                {
-                    skills.map((skill, index) => (
+            <div className="overflow-hidden relative w-full py-6">
+                <motion.div
+                    className="flex gap-12"
+                    animate={{ x: ["0%", "-100%"] }}
+                    transition={{
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        ease: "linear",
+                        duration: 10,
+                    }}
+                >
+                    {skills.concat(skills).map((skill, index) => (
                         <Skill key={index} {...skill} />
-                    ))
-                }
+                    ))}
+                </motion.div>
+
             </div>
         </section>
     )

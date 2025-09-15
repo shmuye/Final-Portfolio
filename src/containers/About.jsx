@@ -47,16 +47,16 @@ const About = () => {
                     />
                     <div className="flex justify-center items-center gap-4">
                         <a href="https://github.com/shmuye">
-                            <FaGithub className=" text-brand hover:text-brand-dark" size={24} />
+                            <FaGithub className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
                         </a>
-                        <a href="https://x.com/shmuye">
-                            <FaTwitter className=" text-brand hover:text-brand-dark " size={24} />
+                        <a href="https://X.com/shmuye">
+                            <FaTwitter className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
                         </a>
-                       <a href="https://www.linkedin.com/in/shmuye-ayalneh-00707919a/">
-                           <FaLinkedin className="text-brand  hover:text-brand-dark" size={24} />
-                       </a>
-                        <a href="https://www.facebook.com/shmuye">
-                            <FaFacebook className=" text-brand hover:text-brand-dark" size={24} />
+                        <a href="https://www.linkedin.com/in/shmuye-ayalneh/">
+                            <FaLinkedin className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
+                        </a>
+                        <a href="https://www.facebook.com/share/16jQ8s0gyB/">
+                            <FaFacebook className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
                         </a>
 
 
