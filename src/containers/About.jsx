@@ -3,6 +3,7 @@ import { FaGithub, FaFacebook, FaTwitter,  FaLinkedin } from 'react-icons/fa'
 import { photo } from '../assets/'
 import SectionHeading from "../components/SectionHeading.jsx";
 import Status from "../components/Status.jsx";
+import { motion } from "framer-motion";
 const About = () => {
     return (
         <section className="section" id="about">
@@ -46,18 +47,26 @@ const About = () => {
                         className="w-full md:w-[400px]"
                     />
                     <div className="flex justify-center items-center gap-4">
-                        <a href="https://github.com/shmuye">
+                        <motion.a
+                            whileHover={{  scale: 1.2, y:  -2}}
+                            href="https://github.com/shmuye">
                             <FaGithub className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                        </a>
-                        <a href="https://X.com/shmuye">
+                        </motion.a>
+                        <motion.a
+                            whileHover={{  scale: 1.2, y:  -2}}
+                            href="https://X.com/shmuye">
                             <FaTwitter className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/shmuye-ayalneh/">
+                        </motion.a>
+                        <motion.a
+                            whileHover={{  scale: 1.2, y:  -2}}
+                            href="https://www.linkedin.com/in/shmuye-ayalneh/">
                             <FaLinkedin className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                        </a>
-                        <a href="https://www.facebook.com/share/16jQ8s0gyB/">
+                        </motion.a>
+                        <motion.a
+                            whileHover={{  scale: 1.2, y:  -2}}
+                            href="https://www.facebook.com/share/16jQ8s0gyB/">
                             <FaFacebook className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                        </a>
+                        </motion.a>
 
 
                     </div>

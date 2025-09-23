@@ -1,7 +1,6 @@
 import React from 'react'
 import { FaGithub, FaFacebook, FaTwitter,  FaLinkedin } from 'react-icons/fa'
-
-
+import { motion } from 'framer-motion'
 
 const Footer = () => {
     return (
@@ -44,11 +43,13 @@ const Footer = () => {
                         {
                             (["Home", "About", "Skills", "Services","Projects","Contact"].map((item, i) => (
 
-                                <li key={i}>
+                                <motion.li
+                                   whileHover={{  x: -10, y: 0 }}
+                                    key={i}>
                                        <a
                                            className="text-brand hover:text-brand-dark text-body"
                                            href={`#${item.toLowerCase()}`}>{item}</a>
-                                   </li>
+                                   </motion.li>
                             )))
                         }
                     </ul>
@@ -56,18 +57,26 @@ const Footer = () => {
             <div className="flex flex-col gap-4">
                 <h2 className="text-white text-subheading">Social</h2>
                 <div className="flex gap-4">
-                    <a href="https://github.com/shmuye">
+                    <motion.a
+                        whileHover={{  scale: 1.2, y:  -2}}
+                        href="https://github.com/shmuye">
                         <FaGithub className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                    </a>
-                    <a href="https://X.com/shmuye">
+                    </motion.a>
+                    <motion.a
+                        whileHover={{  scale: 1.2, y:  -2}}
+                        href="https://X.com/shmuye">
                         <FaTwitter className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                    </a>
-                    <a href="https://www.linkedin.com/in/shmuye-ayalneh/">
+                    </motion.a>
+                    <motion.a
+                        whileHover={{  scale: 1.2, y:  -2}}
+                        href="https://www.linkedin.com/in/shmuye-ayalneh/">
                         <FaLinkedin className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                    </a>
-                    <a href="https://www.facebook.com/share/16jQ8s0gyB/">
+                    </motion.a>
+                    <motion.a
+                        whileHover={{  scale: 1.2, y:  -2}}
+                        href="https://www.facebook.com/share/16jQ8s0gyB/">
                         <FaFacebook className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
-                    </a>
+                    </motion.a>
                 </div>
               </div>
             </div>
