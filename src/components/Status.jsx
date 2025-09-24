@@ -30,7 +30,7 @@ const Counter = ({from , to , duration}) => {
 }
 
 const Status = () => (
-    <section className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center p-4 my-2 rounded-sm shadow-sm shadow-brand-light bg-light-gray">
+    <section className="grid grid-cols-2 md:grid-cols-4 gap-6 text-dark-gray text-center p-4 my-2 rounded-sm shadow-sm  bg-light-gray">
         <div className="flex flex-col gap-2">
             <p className="text-body font-bold whitespace-nowrap">Year Of Experience</p>
             <Counter className="font-bold text-2xl" from={0} to={2} duration={1} />

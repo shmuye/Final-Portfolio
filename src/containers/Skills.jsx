@@ -55,7 +55,7 @@ const Skills = () => {
                         repeat: Infinity,
                         repeatType: "loop",
                         ease: "linear",
-                        duration: 10,
+                        duration: 25,
                     }}
                 >
                     {skills.concat(skills).map((skill, index) => (
