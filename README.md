@@ -1,12 +1,55 @@
-# React + Vite
+# 🌟 Person Portfolio Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and interactive personal portfolio built with **React**, styled using **TailwindCSS**, enhanced with smooth animations via **Framer Motion**, and featuring a functional contact form powered by **EmailJS**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- ⚛️ **React** – Component-based UI development
+- 🎨 **TailwindCSS** – Utility-first styling framework
+- ✨ **Framer Motion** – Beautiful animations and transitions
+- 📩 **EmailJS** – Seamless contact form integration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📂 Folder Structure
+
+Src/
+├── assets/ # Images, icons, and other static files
+├── Components/ # Reusable UI components
+├── Containers/ # Section-wise components (About, Projects, Contact, etc.)
+├── Constants/ # Static data/constants (links, texts, etc.)
+├── App.jsx # Main application file
+├── index.css # Global styles
+└── main.jsx # Entry point of the app
+
+
+---
+
+## ✨ Features
+
+- 🎭 **Smooth Animations** with Framer Motion
+- 📱 **Responsive Design** powered by TailwindCSS
+- 📬 **Contact Form** integrated with EmailJS
+- ⚡ **Fast and Modern** React app architecture
+
+---
+
+## 🛠️ Getting Started
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/your-username/person-portfolio.git
+   cd person-portfolio
+   
+2. Install dependecies
+    
+   npm install
+
+3.  Run the development server
+
+   npm run dev
+
+
+
