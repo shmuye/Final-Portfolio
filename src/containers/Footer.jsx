@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <section
             className="section bg-dark-gray">
-            <div className="flex flex-col  md:flex-row md:justify-center md:items-start gap-16 pl-8 md:pl-0">
+            <div className="flex flex-col px-4 py-8 gap-4   md:flex-row md:justify-between  md:items-start md:py-0 md:px-8 ">
                 <div className="flex flex-col gap-4">
                     <h2 className="text-white text-subheading">More About Me</h2>
                     <ul className="flex flex-col gap-2 text-white text-body">
@@ -30,10 +30,7 @@ const Footer = () => {
                             <span className="font-bold w-40">Hobbies:</span>
                             <span>Sport | Reading | Music</span>
                         </li>
-                        <li className="flex">
-                            <span className="font-bold w-40">Current Job:</span>
-                            <span>Software Engineering Student | Full Stack Developer</span>
-                        </li>
+
                     </ul>
                 </div>
 

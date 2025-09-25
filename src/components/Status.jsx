@@ -19,6 +19,7 @@ const Counter = ({from , to , duration}) => {
 
     return (
         <motion.span
+            className="font-bold"
             ref={ref}
             animate={controls}
             initial={{ value: from }}
@@ -30,15 +31,15 @@ const Counter = ({from , to , duration}) => {
 }
 
 const Status = () => (
-    <section className="grid grid-cols-2 md:grid-cols-4 gap-6 text-dark-gray text-center p-4 my-2 rounded-sm shadow-sm  bg-light-gray">
+    <section className="flex justify-center gap-6 p-4 my-2 rounded-sm shadow-md ">
         <div className="flex flex-col gap-2">
             <p className="text-body font-bold whitespace-nowrap">Year Of Experience</p>
-            <Counter className="font-bold text-2xl" from={0} to={2} duration={1} />
+            <Counter  from={0} to={2} duration={1} />
 
         </div>
         <div className="flex flex-col gap-2">
             <p className="no-wrap text-body font-bold whitespace-nowrap">Projects Completed</p>
-            <Counter className="font-bold text-2xl" from={0} to={4} duration={1} />
+            <Counter  from={0} to={4} duration={1} />
         </div>
     </section>
 );

@@ -73,7 +73,7 @@ const Contact = () => {
                         <label className="label">Your Message:</label>
                         <textarea
                             name="message"
-                            className="p-2 border-2 w-[400px] h-[200px] border-light-gray rounded-md text-body"
+                            className="p-3 w-[400px] h-[200px] shadow-sm shadow-brand-dark text-body"
                             placeholder="Enter your message"
                             required
                         />
