@@ -12,6 +12,7 @@ const Service = ({ icon, title, description }) => {
         <motion.div
             className="flex flex-col items-center hover:shadow-sm shadow-brand-dark justify-start rounded-2xl gap-2 py-4 px-6 w-full md:w-1/3"
             whileHover="hover"
+            whileTap="hover"
             initial="initial"
         >
             <motion.div variants={iconVariants}>{icon}</motion.div>
