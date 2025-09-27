@@ -1,23 +1,13 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React from 'react';
 
 const Loader = () => {
     return (
-        <div className="flex items-center justify-center h-screen w-screen bg-white">
-            <motion.div
-                className="w-12 h-12 bg-brand-light rounded-full border border-brand-dark"
-                animate={{
-                    scale: [1, 1.5, 1],
-                    rotate: [0, 180, 360],
-                }}
-                transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-            />
+        <div className="w-full h-screen gap-x-2 flex justify-center items-center">
+            <div className="w-5 bg-brand animate-pulse h-5 rounded-full animate-bounce" />
+            <div className="w-5 animate-pulse h-5 bg-brand-dark rounded-full animate-bounce" />
+            <div className="w-5 h-5 animate-pulse bg-dark-gray rounded-full animate-bounce" />
         </div>
     );
-};
+}
 
 export default Loader;
