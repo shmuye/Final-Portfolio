@@ -35,7 +35,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col gap-4">
-                    <h2 className="text-white text-subheading">Links</h2>
+                    <h2 className="text-white text-subheading" >Links</h2>
                     <ul className="flex flex-col gap-2">
                         {
                             (["Home", "About", "Skills", "Services","Projects","Contact"].map((item, i) => (
