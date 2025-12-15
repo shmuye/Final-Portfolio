@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 const Footer = () => {
     return (
         <section
-            className="section bg-dark-gray">
+            className="section bg-black">
             <div className="flex flex-col px-4 py-8 gap-4   md:flex-row md:justify-between  md:items-start md:py-0 md:px-8 ">
                 <div className="flex flex-col gap-4">
-                    <h2 className="text-white text-subheading">More About Me</h2>
+                    <h2 className="text-white text-subheading">Basic Info</h2>
                     <ul className="flex flex-col gap-2 text-white text-body">
                         <li className="flex">
                             <span className="font-bold w-40">Full Name:</span>
@@ -61,7 +61,7 @@ const Footer = () => {
                     </motion.a>
                     <motion.a
                         whileHover={{  scale: 1.2, y:  -2}}
-                        href="https://X.com/shmuye">
+                        href="https://X.com/shudev27">
                         <FaTwitter className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
                     </motion.a>
                     <motion.a

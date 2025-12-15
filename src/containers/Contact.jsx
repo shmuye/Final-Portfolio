@@ -1,119 +1,121 @@
-import { useRef , useState } from "react";
-import emailjs from '@emailjs/browser'
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-hot-toast";
 import Button from "../components/Button.jsx";
 import SectionHeading from "../components/SectionHeading.jsx";
-import { PhoneCall, MailIcon, MapPin } from "lucide-react";
+import { PhoneCall, MailIcon, Mail, User, MapPin } from "lucide-react";
+import Input from "../components/Input.jsx";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 const Contact = () => {
-    const form = useRef(null);
-    const [status, setStatus] = useState(null);
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
-        emailjs
-            .sendForm(
-                "service_nahup8n",
-                "template_4tthyjs",
-                form.current,   {
-                    publicKey: "yrMgxXbqVMZIgZrBm"
-                }
+  const form = useRef(null);
 
-            )
-            .then(
-                (result) => {
-                    console.log(result.text);
-                    setStatus("Thanks for your message, I will get back to you soon.");
-                    form.current.reset();
-                },
-                (error) => {
-                    console.log(error.text);
-                    setStatus("Something went wrong, please try again later.");
-                }
-            );
-    };
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-    return (
-        <section id="contact" className="section">
-            <h2 className="text-subHeading text-dark-gray text-center">
-                Let's Solve Problems Together
-            </h2>
-            <SectionHeading content="Get In Touch" />
+    emailjs
+      .sendForm(
+        "service_nahup8n",
+        "template_4tthyjs",
+        form.current,
+        { publicKey: "yrMgxXbqVMZIgZrBm" }
+      )
+      .then(
+        () => toast.success("Message sent successfully!"),
+        () => toast.error("Something went wrong. Please try again.")
+      );
+  };
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                {/* Contact Form */}
-                <form
-                    ref={form}
-                    onSubmit={sendEmail}
-                    className="flex flex-col gap-4"
-                >
-                    <div className="flex flex-col items-start gap-2">
-                        <label className="label">Your Name:</label>
-                        <input
-                            className="input"
-                            name="name"
-                            type="text"
-                            placeholder="Enter your name"
-                            required
-                        />
-                    </div>
+  return (
+    <section id="contact" className="section dark:bg-black/90">
+      <SectionHeading content="Get In Touch" />
 
-                    <div className="flex flex-col items-start gap-2">
-                        <label className="label">Your Email:</label>
-                        <input
-                            className="input"
-                            name="email"
-                            type="email"
-                            placeholder="Enter your email"
-                            required
-                        />
-                    </div>
+      <motion.div
+        ref={ref}
+        variants={variants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        className="flex flex-col md:flex-row items-center justify-center gap-10"
+      >
+        {/* ---- Contact Form ---- */}
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="w-full max-w-md border-l-4 border-brand-dark bg-white dark:bg-black/80 rounded-lg p-6 shadow-sm flex flex-col gap-5"
+        >
+          {/* Name */}
+          <div className="flex flex-col gap-1">
+            <label className="text-sm font-medium text-dark dark:text-light-gray">Your Name</label>
+            <Input
+              icon={User}
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
 
-                    <div className="flex flex-col items-start gap-2">
-                        <label className="label">Your Message:</label>
-                        <textarea
-                            name="message"
-                            className="p-3 w-[400px] h-[200px] shadow-sm shadow-brand-dark text-body"
-                            placeholder="Enter your message"
-                            required
-                        />
-                    </div>
+          {/* Email */}
+          <div className="flex flex-col gap-1">
+            <label className="text-sm font-medium text-dark dark:text-light-gray">Your Email</label>
+            <Input
+              icon={Mail}
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-                    <Button type="submit" width={400} text="Submit" />
-                    {/* Status Message */}
-                    {status === "success" && (
-                        <p className="text-green-600 text-sm mt-2">
-                            {status}
-                        </p>
-                    )}
-                    {status === "error" && (
-                        <p className="text-red-600 text-sm mt-2">
-                            {status}
-                        </p>
-                    )}
+          {/* Message */}
+          <div className="flex flex-col gap-1">
+            <label className="text-sm font-medium text-dark dark:text-light-gray">Your Message</label>
+            <textarea
+              name="message"
+              placeholder="Enter your message"
+              required
+              className="w-full min-h-[160px] p-3 border border-dark-gray rounded-md text-sm text-dark-gray dark:text-light-gray focus:outline-none"
+            />
+          </div>
 
-                </form>
+          <Button type="submit" text="Send" width={300} />
+        </form>
 
-                {/* Contact Info */}
-                <div className="p-2 w-[400px] flex flex-col items-center gap-3">
-                    <div className="flex flex-col items-center gap-2">
-                        <PhoneCall color="#007079" size={24} />
-                        <p className="text-body">+251933191480</p>
-                    </div>
+        {/* ---- Contact Info ---- */}
+        <motion.div className="w-full max-w-md bg-light-gray dark:bg-black/80 rounded-lg p-6 flex flex-col items-center gap-6 shadow-sm">
+          <div className="flex flex-col items-center gap-2">
+            <PhoneCall className="text-brand-dark dark:text-brand" size={24} />
+            <p className="text-sm text-dark-gray dark:text-light-gray">+251 933 191 480</p>
+          </div>
 
-                    <div className="flex flex-col items-center gap-2">
-                        <MailIcon color="#007079" size={24} />
-                        <p className="text-body">shmuye27@gmail.com</p>
-                    </div>
+          <div className="flex flex-col items-center gap-2">
+            <MailIcon className="text-brand-dark dark:text-brand" size={24} />
+            <p className="text-sm text-dark-gray dark:text-light-gray">shmuye27@gmail.com</p>
+          </div>
 
-                    <div className="flex flex-col items-center gap-2">
-                        <MapPin color="#007079" size={24} />
-                        <p className="text-body">Addis Ababa, Ethiopia</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+          <div className="flex flex-col items-center gap-2">
+            <MapPin className="text-brand-dark dark:text-brand" size={24} />
+            <p className="text-sm text-dark-gray dark:text-light-gray">Addis Ababa, Ethiopia</p>
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
 };
 
 export default Contact;

@@ -1,38 +1,73 @@
-import React from 'react';
 import { useState } from 'react';
-import { Github } from 'lucide-react'
-
+import { ArrowUpRight, Code2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Project = ({siteUri, githubUri, imageUri, name, description }) => {
     const [hover, setHover] = useState(false);
+
+    const { ref, inView } = useInView(
+        {
+            triggerOnce: false,
+            threshold: 0.2
+        })
+    const variants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut"} },
+    }
     return (
-        <div
+        <motion.div
+            ref={ref}
+            variants={variants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className="rounded-2xl shadow-sm bg-white  w-full min-h-[400px]  md:w-[30%] relative"
+            className="relative w-full min-h-[400px] md:w-[28%] bg-white dark:bg-black/90 rounded-2xl shadow-sm transition-transform"
         >
-            <a href={githubUri} className="flex flex-col" target="_blank" rel="noreferrer">
-                <img src={imageUri} alt={name} className="w-full rounded-t-2xl h-[200px]" />
-                <h3 className="title p-2">{name}</h3>
-                <p className="pElement text-dark-gray pt-2 pb-4 px-2">{description}</p>
+            <a
+                href={githubUri}
+                target="_blank"
+                rel="noreferrer"
+                className="flex flex-col"
+                >
+                <img
+                    src={imageUri}
+                    alt={name}
+                    className="w-full h-[200px] rounded-t-2xl object-cover" />
+                <h3 className="p-3 title">{name}</h3>
+                <p className="pElement text-dark-gray pb-4 px-3">{description}</p>
             </a>
             {hover && (
-                <div className="rounded-2xl absolute top-0 left-0 w-full h-full bg-brand-dark opacity-75 flex flex-col justify-center items-center gap-2">
-                    <a href={githubUri} className="text-white" target="_blank" rel="noreferrer">
-                        <Github size={48} />
-                    </a>
-                    {
-                        siteUri &&
+                <div className="absolute inset-0 flex items-center justify-center gap-3 bg-brand-dark/90 rounded-2xl">
+                    <a
+                        href={githubUri}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-white bg-dark-gray rounded-md shadow"
+                        >
+                       <Code2 size={16} />
+                         Source Code
+                     </a>
+
+                    { siteUri &&
                         <a
-                            className="text-white font-bold"
-                            href={siteUri}>
+                            href={siteUri}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center gap-2 px-4 py-2 text-sm text-white bg-dark-gray rounded-md shadow"
+                           >
                             View Site
+                            <ArrowUpRight  size={16} />
                         </a>
                     }
 
                 </div>
             )}
-        </div>
+        </motion.div>
     );
 };
 

@@ -17,9 +17,10 @@ import {
     git,
     typescript,
 } from "../assets/index.js";
+
 import Skill from "../components/Skill.jsx";
 import SectionHeading from "../components/SectionHeading.jsx";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const skills = [
     {name: 'HTML', icon: html },
@@ -41,31 +42,27 @@ const skills = [
 ]
 
 const Skills = () => {
-    return (
+  return (
         <section
             id="skills"
-            className="section bg-light-gray "
+            className="section bg-light-gray dark:bg-black/80 transition-colors duration-500"
         >
             <SectionHeading content="Skills" />
-            <div className="overflow-hidden relative w-full py-6">
-                <motion.div
-                    className="flex gap-12"
-                    animate={{ x: ["0%", "-100%"] }}
-                    transition={{
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        ease: "linear",
-                        duration: 25,
-                    }}
-                >
-                    {skills.concat(skills).map((skill, index) => (
-                        <Skill key={index} {...skill} />
-                    ))}
-                </motion.div>
-
+            <div className="w-full py-6 flex flex-wrap justify-center gap-4">
+                {
+                    skills.map((skill, index) => (
+                        <div
+                          key={index}>
+                            <Skill {...skill} />
+                    </div>
+                    ))
+                }
+             
             </div>
         </section>
     )
 }
+
+
 
 export default Skills

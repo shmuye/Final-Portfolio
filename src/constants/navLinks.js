@@ -6,5 +6,5 @@ export const NavLinks = {
     Services: { name: "Services", url: "#services" },
     Projects: { name: "Projects", url: "#projects" },
     Contact: { name: "Contact", url: "#contact" },
-    Blog: { name: "Blog", url: "#blog" },
+    Blog: { name: "Blog", url: "#home" },
 };

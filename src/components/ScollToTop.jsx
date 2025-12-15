@@ -9,7 +9,7 @@ const ScrollToTop = () => {
           if(window.scrollY > 300){
               setIsVisible(true);
 
-          }else{
+      }else{
               setIsVisible(false);
           }
       }
@@ -30,7 +30,7 @@ const ScrollToTop = () => {
                isVisible &&
                <button
                    className="fixed bottom-6 right-6 p-2 text-brand hover:text-brand-light
-                   rounded-full bg-brand-dark  cursor-pointer
+                   rounded-full bg-dark-gray  cursor-pointer
                    transition duration-300"
                    onClick={scrollToTop}>
                    <ArrowUp size={24} />

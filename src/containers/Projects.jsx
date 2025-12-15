@@ -1,5 +1,5 @@
 import React from 'react'
-import { lms ,EHM, youtube, Research } from '../assets'
+import { lms , employee , youtube, Research, netflix, amazon} from '../assets'
 import Project from "../components/Project.jsx";
 import SectionHeading from "../components/SectionHeading.jsx";
 const projects = [
@@ -17,19 +17,33 @@ const projects = [
      imageUri: Research
     },
     {
-     name: 'Youtube Clone',
-     description: "Youtube clone application using React and data from rapid api.",
-     githubUri: "https://github.com/shmuye/youtube-clone",
-        siteUri: 'https://utubelike.netlify.app/',
-     imageUri: youtube,
-    },
-    {
      name: 'Employee Hierarchy Manager',
      description: "A full stack Employee Hierarchy Manager using NextJs for fronend and HonoJs Backend and postgres" +
          "for database.",
      githubUri: "https://github.com/shmuye/Emloyee-Hierarchy-Manager",
-     imageUri: EHM
-    }
+     imageUri: employee
+    },
+    {
+        name: 'Youtube Clone',
+        description: "Youtube clone application using React and data from rapid api.",
+        githubUri: "https://github.com/shmuye/youtube-clone",
+        siteUri: 'https://utubelike.netlify.app/',
+        imageUri: youtube,
+    },
+    {
+        name: 'Netflix Clone',
+        description: "Netflix clone application using React and data from rapid api.",
+        githubUri: "https://github.com/shmuye/Netflix-Clone",
+        // siteUri: 'https://utubelike.netlify.app/',
+        imageUri: netflix,
+    },
+    {
+        name: 'Amazon Clone',
+        description: "Amazon clone application using React and Firebase for backend and Firestore for database.",
+        githubUri: "https://github.com/shmuye/amazon-clone",
+        // siteUri: 'https://utubelike.netlify.app/',
+        imageUri: amazon,
+    },
 
 ]
 
@@ -38,7 +52,7 @@ const Projects = () => {
 return (
         <section
             id="projects"
-            className="section bg-light-gray"
+            className="section bg-light-gray dark:bg-black/80"
         >
             <SectionHeading content="Projects" />
             <div className=" w-full flex flex-col items-center justify-center md:flex-row md:flex-wrap gap-4" >

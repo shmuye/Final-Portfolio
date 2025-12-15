@@ -1,12 +1,14 @@
 import { MenuIcon, X } from "lucide-react";
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react';
 import Sidebar from "./Sidebar.jsx";
-import {NavLinks} from "../constants/navLinks.js";
-import {motion, AnimatePresence } from "framer-motion";
-const NavBar = () => {
-    const [open, setOpen] =useState(false);
-    const [active, setActive] = useState("Home");
+import { NavLinks } from "../constants/navLinks.js";
+import { AnimatePresence } from "framer-motion";
+import { DarkModeToggle } from "./DarkModeToggle.jsx";
 
+const NavBar = () => {
+    const [open, setOpen] = useState(false);
+    const [active, setActive] = useState("Home");
+  
     useEffect(() => {
         const sections = Object.values(NavLinks).map((link) =>
             document.querySelector(link.url)
@@ -15,8 +17,9 @@ const NavBar = () => {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
+                    const id = entry.target.id;
                     if (entry.isIntersecting) {
-                        setActive(entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1));
+                        setActive(id.charAt(0).toUpperCase() + id.slice(1));
                     }
                 });
             },
@@ -26,22 +29,29 @@ const NavBar = () => {
         sections.forEach((sec) => sec && observer.observe(sec));
         return () => observer.disconnect();
     }, []);
+
     return (
-        <header className="fixed left-0 right-0 h-16  border-b border-brand-dark z-50 bg-dark-gray">
-            <nav className="flex justify-between items-center h-full p-4">
-                <h1 className="font-bold text-white decoration-brand-dark underline underline-offset-8 decoration-2">
-                    <span className="text-brand-dark">S</span>hmuye.
-                </h1>
+        <header
+            className="fixed inset-x-0 z-[1000]"
+        >
+            <nav className="flex justify-between items-center p-4 bg-white dark:bg-black shadow-sm z-10">
+                <div className="flex items-center gap-4">
+                    <h1 className="font-bold dark:text-white text-lg underline underline-offset-8 decoration-2 decoration-brand-dark">
+                        <span className="text-brand">S</span>hmuye.
+                    </h1>
+                    <DarkModeToggle />
+                </div>
 
-
-                <ul className="hidden md:flex gap-8 justify-end">
+                <ul className="hidden md:flex gap-8">
                     {Object.values(NavLinks).map((link, index) => (
                         <li key={index}>
                             <a
-                                className={`text-body ${
-                                    active === link.name && "underline decoration-brand-dark underline-offset-8"
-                                } text-brand hover:text-brand-dark`}
                                 href={link.url}
+                                className={`text-body transition-colors ${
+                                    active === link.name
+                                        ? "underline decoration-brand-dark underline-offset-8 dark:text-white"
+                                        : "text-brand hover:text-brand-dark dark:hover:text-white"
+                                }`}
                             >
                                 {link.name}
                             </a>
@@ -49,15 +59,14 @@ const NavBar = () => {
                     ))}
                 </ul>
 
-
                 <button
                     className="md:hidden z-50"
                     onClick={() => setOpen(!open)}
                 >
                     {open ? (
-                        <X  className="cursor-pointer font-bold" color="#007079" size={24} />
+                        <X size={24} className="cursor-pointer text-brand" />
                     ) : (
-                        <MenuIcon className="cursor-pointer font-bold" color="#007079" size={24} />
+                        <MenuIcon size={24} className="cursor-pointer text-brand" />
                     )}
                 </button>
 
@@ -66,6 +75,7 @@ const NavBar = () => {
                 </AnimatePresence>
             </nav>
         </header>
-    )
-}
-export default NavBar
+    );
+};
+
+export default NavBar;
