@@ -1,6 +1,7 @@
 // skills.js (optional external file)
 import {
     html, css, js, tailwind, react, figma, node, nest, express, postgres, mysql, mongo, python, flutter, git, typescript,
+    supabase, next
 } from "../assets/index.js";
 
 export const skillsData = {
@@ -10,6 +11,7 @@ export const skillsData = {
         { name: 'JavaScript', icon: js },
         { name: 'TypeScript', icon: typescript },
         { name: 'React', icon: react },
+        {name: 'NextJs', icon: next},
         { name: 'Tailwind CSS', icon: tailwind },
         { name: 'Figma', icon: figma },
     ],
@@ -24,6 +26,7 @@ export const skillsData = {
         { name: 'PostgreSQL', icon: postgres },
         { name: 'MySQL', icon: mysql },
         { name: 'MongoDB', icon: mongo },
+        {name:  'Supabase', icon: supabase }
     ],
 
     "Programming Languages": [

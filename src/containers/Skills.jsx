@@ -16,6 +16,8 @@ import {
     flutter,
     git,
     typescript,
+    supabase,
+    next
 } from "../assets/index.js";
 
 import Skill from "../components/Skill.jsx";
@@ -39,6 +41,8 @@ const skills = [
     {name: 'Flutter', icon: flutter },
     {name: 'Git', icon: git },
     {name: 'TypeScript', icon: typescript },
+    {name: 'Supabase', icon: supabase},
+    {name: 'NextJs', icon: next}
 ]
 
 const Skills = () => {
