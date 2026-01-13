@@ -34,7 +34,7 @@ const NavBar = () => {
         <header
             className="fixed inset-x-0 z-[1000]"
         >
-            <nav className="flex justify-between items-center p-4 bg-white dark:bg-black shadow-sm z-10">
+            <nav className="flex justify-between items-center p-4 bg-white dark:bg-slate-900 shadow-sm z-10">
                 <div className="flex items-center gap-4">
                     <h1 className="font-bold dark:text-white text-lg underline underline-offset-8 decoration-2 decoration-brand-dark">
                         <span className="text-brand">S</span>hmuye.

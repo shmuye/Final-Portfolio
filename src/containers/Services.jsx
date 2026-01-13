@@ -29,7 +29,7 @@ const Services = () => {
     return (
         <section
             id="services"
-            className="section dark:bg-black/90 transition-colors duration-500"
+            className="section dark:bg-slate-900 transition-colors duration-500"
 
 
         >

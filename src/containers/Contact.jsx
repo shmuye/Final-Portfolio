@@ -42,7 +42,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="section dark:bg-black/90">
+    <section id="contact" className="section dark:bg-slate-900">
       <SectionHeading content="Get In Touch" />
 
       <motion.div
@@ -56,7 +56,7 @@ const Contact = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="w-full max-w-md border-l-4 border-brand-dark bg-white dark:bg-black/80 rounded-lg p-6 shadow-sm flex flex-col gap-5"
+          className="w-full max-w-md border-l-4 border-brand-dark bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm flex flex-col gap-5"
         >
           {/* Name */}
           <div className="flex flex-col gap-1">
@@ -97,7 +97,7 @@ const Contact = () => {
         </form>
 
         {/* ---- Contact Info ---- */}
-        <motion.div className="w-full max-w-md bg-light-gray dark:bg-black/80 rounded-lg p-6 flex flex-col items-center gap-6 shadow-sm">
+        <motion.div className="w-full max-w-md bg-light-gray dark:bg-slate-800 rounded-lg p-6 flex flex-col items-center gap-6 shadow-sm">
           <div className="flex flex-col items-center gap-2">
             <PhoneCall className="text-brand-dark dark:text-brand" size={24} />
             <p className="text-sm text-dark-gray dark:text-light-gray">+251 933 191 480</p>

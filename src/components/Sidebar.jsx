@@ -6,7 +6,7 @@ const Sidebar = ({ setOpen, active }) => {
     return (
         <motion.section
             id="sidebar"
-            className="fixed top-16 right-0 w-full p-6 bg-white dark:bg-black md:hidden shadow-md z-40"
+            className="fixed top-16 right-0 w-full p-6 bg-white dark:bg-slate-900 md:hidden shadow-md z-40"
             initial={{ x: "100%"}}
             animate={{ x: 0,}}
             exit={{ x: "100%"}}

@@ -49,7 +49,7 @@ const Skills = () => {
   return (
         <section
             id="skills"
-            className="section bg-light-gray dark:bg-black/80 transition-colors duration-500"
+            className="section bg-light-gray dark:bg-slate-800 transition-colors duration-500"
         >
             <SectionHeading content="Skills" />
             <div className="w-full py-6 flex flex-wrap justify-center gap-4">

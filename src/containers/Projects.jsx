@@ -52,7 +52,7 @@ const Projects = () => {
 return (
         <section
             id="projects"
-            className="section bg-light-gray dark:bg-black/80"
+            className="section bg-light-gray dark:bg-slate-800"
         >
             <SectionHeading content="Projects" />
             <div className=" w-full flex flex-col items-center justify-center md:flex-row md:flex-wrap gap-4" >

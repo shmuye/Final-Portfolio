@@ -22,7 +22,7 @@ const About = () => {
     };
 
     return (
-        <section className="section dark:bg-black/90" id="about">
+        <section className="section dark:bg-slate-900" id="about">
             <SectionHeading content="About Me" />
 
             <div className="flex flex-col md:flex-row justify-center items-start gap-8 transition-colors duration-500">

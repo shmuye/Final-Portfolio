@@ -26,7 +26,7 @@ const Project = ({siteUri, githubUri, imageUri, name, description }) => {
             animate={inView ? "visible" : "hidden"}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
-            className="relative w-full min-h-[400px] md:w-[28%] bg-white dark:bg-black/90 rounded-2xl shadow-sm transition-transform"
+            className="relative w-full min-h-[400px] md:w-[28%] bg-white dark:bg-slate-900 rounded-2xl shadow-sm transition-transform"
         >
             <a
                 href={githubUri}

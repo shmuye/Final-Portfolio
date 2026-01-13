@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const Footer = () => {
     return (
         <section
-            className="section bg-black">
+            className="section bg-slate-800">
             <div className="flex flex-col px-4 py-8 gap-4   md:flex-row md:justify-between  md:items-start md:py-0 md:px-8 ">
                 <div className="flex flex-col gap-4">
                     <h2 className="text-white text-subheading">Basic Info</h2>
