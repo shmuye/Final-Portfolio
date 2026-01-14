@@ -1,14 +1,21 @@
 import React from 'react'
-import { lms , employee , youtube, Research, netflix, amazon} from '../assets'
+import { lms , employee , youtube, Research, netflix, amazon, social} from '../assets'
 import Project from "../components/Project.jsx";
 import SectionHeading from "../components/SectionHeading.jsx";
 const projects = [
-    {
-     name: 'Library Management System',
-     description: "A Full stack Library Management System build using Express backend and React frontend and mongodb database.",
-     githubUri: "https://github.com/shmuye/Library-Management-System",
-     imageUri: lms
+      {
+        name: 'Social Media App',
+        description: "A lightweight social media app built with React, TypeScript, Supabase, and Tailwind CSS featuring communities, posts, comments, likes, and GitHub OAuth authentication.",
+        githubUri: "https://github.com/shmuye/social-media-app",
+        imageUri: social,
+        siteUri: "https://postly-flax-iota.vercel.app/"
     },
+    // {
+    //  name: 'Library Management System',
+    //  description: "A Full stack Library Management System build using Express backend and React frontend and mongodb database.",
+    //  githubUri: "https://github.com/shmuye/Library-Management-System",
+    //  imageUri: lms
+    // },
     {
      name: 'Research Collaboration App',
      description: "A Full stack Research Collaboration Android app built using NestJS for the backend and" +
