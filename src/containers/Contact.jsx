@@ -56,7 +56,7 @@ const Contact = () => {
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="w-full max-w-md border-l-4 border-brand-dark bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm flex flex-col gap-5"
+          className="w-full max-w-md bg-white dark:bg-slate-800 rounded-lg p-6 shadow-sm flex flex-col gap-5"
         >
           {/* Name */}
           <div className="flex flex-col gap-1">
