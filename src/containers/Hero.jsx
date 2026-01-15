@@ -33,52 +33,51 @@ const Hero = () => {
     return (
         <>
         <NavBar />
-        <section
-            id="home"
-            className="w-full min-h-screen  p-4 flex items-center justify-center bg-cover bg-center"
-            style={{ backgroundImage: `url(${HeroImage})` }}
-        >
-            <motion.div
-                ref={ref}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
-                variants={variants}
-                className="flex flex-col items-center text-center gap-6">
-                <div>
-                    <p className="font-bold text-heading md:text-hero text-white">
-                        HI, I am Shmuye Ayalneh.
-                    </p>
-                    <p className="font-bold text-heading md:text-hero text-white">
-                        <AnimatePresence mode="wait">
-                            <motion.span
-                                key={roles[index]} // triggers animation when text changes
-                                className="text-brand"
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -20 }}
-                                transition={{ duration: 0.6 }}
-                            >
-                                {roles[index]}
-                            </motion.span>
-                        </AnimatePresence>
-                    </p>
-                </div>
+       <section
+  id="home"
+  className="w-full min-h-screen flex items-center bg-cover bg-center relative"
+  style={{ backgroundImage: `url(${HeroImage})` }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/40"></div>
 
-                {/* Infinite bouncing button */}
-                <motion.button
-                    className="mt-6"
-                    animate={{ y: [0, 15, 0] }}
-                    transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
+  <motion.div
+    ref={ref}
+    initial="hidden"
+    animate={inView ? "visible" : "hidden"}
+    variants={variants}
+    className="relative z-10 max-w-6xl w-full px-6 md:px-12"
+  >
+    <div className="max-w-xl text-left space-y-4">
+      <p className="font-bold text-heading md:text-hero text-white">
+        Hi, I am <span className="text-brand">Shmuye Ayalneh</span>
+      </p>
+      <div className="space-y-2">
 
-                >
-                    <ArrowDown size={48} className="text-brand"  />
-                </motion.button>
-            </motion.div>
-        </section>
+      <p className="text-brand text-heading md:text-hero uppercase font-semibold">
+         Creative
+     </p>
+     <p className="font-bold text-heading md:text-hero text-white">
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={roles[index]}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.6 }}
+            className="text-brand"
+          >
+            {roles[index]}
+          </motion.span>
+        </AnimatePresence>
+      </p>
+
+      </div>
+      
+    </div>
+  </motion.div>
+</section>
+
          </>
     );
 };
