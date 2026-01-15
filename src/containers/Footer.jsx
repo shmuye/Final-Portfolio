@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 const Footer = () => {
     return (
         <section
-            className="section bg-slate-800">
-            <div className="flex flex-col px-4 py-8 gap-4   md:flex-row md:justify-between  md:items-start md:py-0 md:px-8 ">
+            className="bg-slate-800">
+            <div className="flex flex-col p-4 gap-3 md:flex-row md:justify-between  md:items-start">
                 <div className="flex flex-col gap-4">
                     <h2 className="text-white text-subheading">Basic Info</h2>
                     <ul className="flex flex-col gap-2 text-white text-body">
@@ -34,7 +34,7 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-3">
                     <h2 className="text-white text-subheading" >Links</h2>
                     <ul className="flex flex-col gap-2">
                         {
@@ -52,7 +52,7 @@ const Footer = () => {
                     </ul>
                 </div>
             <div className="flex flex-col gap-4">
-                <h2 className="text-white text-subheading">Social</h2>
+                <h2 className="text-white text-subheading">Let's Connect</h2>
                 <div className="flex gap-4">
                     <motion.a
                         whileHover={{  scale: 1.2, y:  -2}}
