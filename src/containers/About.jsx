@@ -59,6 +59,7 @@ const About = () => {
                         {/* Buttons */}
                         <div className="mt-4 flex items-center gap-4">
                             <a
+                                target="/"
                                 href="https://drive.google.com/file/d/12Gpxa328Z-781uJqyAUvPaCdYMaoFVo5/view?usp=sharing"
                                 className="bg-brand text-white p-3 text-sm whitespace-nowrap hover:bg-brand-dark transition"
                             >
