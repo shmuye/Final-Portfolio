@@ -45,7 +45,10 @@ const Footer = () => {
                                     key={i}>
                                        <a
                                            className="text-brand hover:text-brand-dark text-body"
-                                           href={`#${item.toLowerCase()}`}>{item}</a>
+                                           href={`#${item.toLowerCase()}`}
+                                           >
+                                            {item}
+                                            </a>
                                    </motion.li>
                             )))
                         }
@@ -56,22 +59,28 @@ const Footer = () => {
                 <div className="flex gap-4">
                     <motion.a
                         whileHover={{  scale: 1.2, y:  -2}}
-                        href="https://github.com/shmuye">
+                        href="https://github.com/shmuye"
+                        target='/'
+                        >
                         <FaGithub className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
                     </motion.a>
                     <motion.a
                         whileHover={{  scale: 1.2, y:  -2}}
-                        href="https://X.com/shudev27">
+                        href="https://X.com/shudev27"
+                        target='/'
+                        >
                         <FaTwitter className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
                     </motion.a>
                     <motion.a
                         whileHover={{  scale: 1.2, y:  -2}}
-                        href="https://www.linkedin.com/in/shmuye-ayalneh/">
+                        href="https://www.linkedin.com/in/shmuye-ayalneh/"
+                        target='/'>
                         <FaLinkedin className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
                     </motion.a>
                     <motion.a
                         whileHover={{  scale: 1.2, y:  -2}}
-                        href="https://www.facebook.com/share/16jQ8s0gyB/">
+                        href="https://www.facebook.com/share/16jQ8s0gyB/"
+                        target='/'>
                         <FaFacebook className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
                     </motion.a>
                 </div>

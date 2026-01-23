@@ -88,6 +88,7 @@ const About = () => {
                     <div className="flex justify-center items-center gap-6 mb-4">
                         <motion.a
                             whileHover={{ scale: 1.2, y: -2 }}
+                            target="/"
                             href="https://github.com/shmuye"
                         >
                             <FaGithub className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
@@ -95,6 +96,7 @@ const About = () => {
 
                         <motion.a
                             whileHover={{ scale: 1.2, y: -2 }}
+                            target="/"
                             href="https://X.com/shudev27"
                         >
                             <FaTwitter className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
@@ -102,6 +104,7 @@ const About = () => {
 
                         <motion.a
                             whileHover={{ scale: 1.2, y: -2 }}
+                            target="/"
                             href="https://www.linkedin.com/in/shmuye-ayalneh/"
                         >
                             <FaLinkedin className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
@@ -109,6 +112,7 @@ const About = () => {
 
                         <motion.a
                             whileHover={{ scale: 1.2, y: -2 }}
+                            target="/"
                             href="https://www.facebook.com/share/16jQ8s0gyB/"
                         >
                             <FaFacebook className="text-brand hover:text-brand-dark cursor-pointer" size={24} />
